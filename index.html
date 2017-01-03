@@ -391,7 +391,7 @@ html, body {
             var anchs = document.querySelectorAll('a');
             [].slice.call( anchs ).forEach(function(el) {
                 el.addEventListener('click', function(e) {
-                   if (el.getAttribute('href').indexOf('http') !== -1) {
+                   if (el.getAttribute('href').indexOf('http:') !== -1 || el.getAttribute('href').indexOf('https:') !== -1) {
                         e.preventDefault();
                         window.open(el.getAttribute('href'));
                    }
