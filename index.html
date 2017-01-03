@@ -387,6 +387,16 @@ html, body {
             [].slice.call( all ).forEach(function(el) {
                 hljs.highlightBlock( el );
             });
+            
+            var anchs = document.querySelectorAll('a');
+            [].slice.call( anchs ).forEach(function(el) {
+                el.addEventListener('click', function(e) {
+                   if (el.getAttribute('href').indexOf('http') !== -1) {
+                        e.preventDefault();
+                        window.open(el.getAttribute('href');
+                   }
+                });
+            });
         }
 
         getJSON().then(function(data) {
